@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a class="navbar-link" href="http://127.0.0.1:8000/admin/login/?next=/admin/">ADMIN</a> </li>
+            <li><a class="navbar-link" href="{% url 'crud:register'%}">REGISTER</a> </li>
+
+            {% if user.is_authenticated %}
+            <li><a class="navbar-link" href="{% url 'crud:logout' %}">Logout</a> </li>
+            {%else%}
+            <li><a class="navbar-link" href="{% url 'crud:user_login'%}">Login</a> </li>
+            {%endif%}
+
+
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% block abc %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

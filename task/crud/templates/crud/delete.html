@@ -1,0 +1,12 @@
+{% extends 'crud/base.html' %}
+
+{%block abc %}
+
+<div class="jombotron">
+    <h1> Welcome {% if user.is_authenticated %} {{newuser.user}}! {%endif%} </h1>
+    {% if delete %}
+    <h2> Your college has been successfully deleted</h2>
+    {% else %}
+    {% endif %}
+</div>
+{%endblock %}

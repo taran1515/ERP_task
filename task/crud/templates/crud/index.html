@@ -1,0 +1,18 @@
+{% extends 'crud/base.html' %}
+
+{%block abc %}
+
+<div class="jombotron">
+    <h1> Welcome {% if user.is_authenticated %} {{user}}! of {{clg_name}} .  </h1>
+    <h3> Click <a href="{% url 'crud:update'%}">here</a> to update your college.</h3>
+    <h3> Click <a href="{% url 'crud:delete'%}">here</a> to delete your college.</h3>
+    {%else%}
+    <h3>These are {{countuser}} registered users :<br><br><br>
+{% for eachuser in alluser%}
+    {{eachuser.user}}       {{eachuser.college_name}}<br>
+    {%endfor%}</h3>
+    {%endif%}
+
+</div>
+
+{%endblock %}

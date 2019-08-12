@@ -1,0 +1,18 @@
+{% extends 'crud/base.html' %}
+
+{%block abc %}
+
+<div class="jombotron">
+    <h1> Welcome {% if user.is_authenticated %} {{newuser.user}}! of {{newuser.college_name}}  {%endif%} </h1>
+    {% if update %}
+    <h2> Your college has been successfully updated</h2>
+    {% else %}
+    <h2>Update Here:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ update_form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+    {% endif %}
+</div>
+{%endblock %}

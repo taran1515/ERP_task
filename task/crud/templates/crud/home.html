@@ -1,0 +1,11 @@
+{% extends 'crud/base.html' %}
+
+{%block abc %}
+
+<h1>These are registered users :<br><br><br>
+{% for eachuser in alluser%}
+    {{eachuser.user}}       {{eachuser.college_name}}<br>
+    {%endfor%}
+</h1>
+
+{%endblock %}
